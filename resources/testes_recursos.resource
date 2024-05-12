@@ -1,7 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary    
 Library    String
-Library    FakerLibrary   locale=pt_BR         
+        
 
 *** Variables ***
 ${URL}                  http://automacao.qacoders-academy.com.br/login
@@ -21,7 +21,6 @@ ${emailcadastro}            @teste.com.br
 ${perfilAcessoInput}                //input[contains(@name,'accessProfile')]
 ${perfilAcesso}                      ADMIN
 ${CPFInput}                          //input[contains(@name,'cpf')]
-${CPF}                                @{EMPTY}
 ${senhaInputNovoCadastro}            //input[contains(@name,'password')]
 ${senhaNovoCadastro}                 4321@tesT
 ${confirmarSenhaNovoCadastro}        //input[contains(@name,'confirmPassword')]
@@ -30,17 +29,6 @@ ${salvarButton}                      //button[@type='submit'][contains(.,'SALVAR
 
 
 *** Keywords ***
-
-Gerar Nome Completo Aleatório
-    ${NOME}     FakerLibrary.name
-
-Generate Unique CPF
-    ${CPF}=    FakerLibrary.CPF
-    ${CPF}=    Replace String    ${CPF}    .    ${EMPTY}
-    ${CPF}=    Replace String    ${CPF}    -    ${EMPTY}
-    [Return]    ${CPF}
-
-
 
 Abrir o navegador
     Open Browser  browser=headlesschrome
@@ -81,15 +69,21 @@ Passo 7 - Clicar no botão novo usuário
      Sleep    1s
 
 Passo 8 - Digitar Nome Completo
-     ${NOME}     FakerLibrary.name
-     Wait Until Element Is Visible    locator=${novoCadastro} 
-     Input Text                       locator=${NomeCompletoInput}   text=${NOME}  
-     Sleep    1s
+    ${palavra_randomica}    Generate Random String    length=8    chars=[LETTERS]
+    ${palavra_randomica}    Convert To Lower Case     ${palavra_randomica}
+    Set Test Variable       ${FULL_NAME}             A${palavra_randomica} da Silva
+    Log                     ${FULL_NAME}
+    Wait Until Element Is Visible    locator=${novoCadastro} 
+    Input Text                       locator=${NomeCompletoInput}   text= ${FULL_NAME}  
+    Sleep    1s
 
 Passo 9 - Digitar email
-    ${EMAILFAKE}                FakerLibrary.Email
+     ${palavra_randomica}    Generate Random String    length=10    chars=[LETTERS]
+     ${palavra_randomica}    Convert To Lower Case     ${palavra_randomica}
+     Set Test Variable       ${MAIL}             ${palavra_randomica}2@qacoders.com.br
+     Log                     ${MAIL}   
      Click Element                    locator=${emailCadastroInput}
-     Input Text                       locator=${emailCadastroInput}  text=${EMAILFAKE} 
+     Input Text                       locator=${emailCadastroInput}  text= ${MAIL}
      Sleep    1s
 
 Passo 10 - Digitar Perfil de Acesso
@@ -98,9 +92,10 @@ Passo 10 - Digitar Perfil de Acesso
      Sleep    1s
 
 Passo 11 - Digitar CPF
-    
-    
-    ${CPF}=    Generate Unique CPF
+
+    ${numero_randomico}    Generate Random String  length=11   chars=[NUMBERS]
+    Set Test Variable       ${CPF}             ${numero_randomico}
+    Log                     ${CPF}     
     Click Element    locator=${CPFInput} 
     Input Text       locator=${CPFInput}    text=${CPF} 
     Sleep    1s
