@@ -1,9 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary    
-Library    BuiltIn
-Library    Collections
 Library    String
-Library    OperatingSystem
 Library    FakerLibrary   locale=pt_BR         
 
 *** Variables ***
