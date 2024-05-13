@@ -17,7 +17,7 @@ Passo 8 - Digitar nome completo com números
 Passo 15 - Verificar o campo Nome Completo com numeros
     Wait Until Page Contains            O campo nome completo não deve conter números
     Wait Until Page Contains Element    locator=//div[@class='MuiAlert-message css-1xsto0d'][contains(.,'O campo nome completo não deve conter números')]
-
+    Sleep    1s
 Passo 8 - Digitar nome completo com caracteres especiais
      Wait Until Element Is Visible    locator=${novoCadastro} 
      Input Text                       locator=${NomeCompletoInput}   text=Anderson"$#.,Francelino  
@@ -26,7 +26,7 @@ Passo 8 - Digitar nome completo com caracteres especiais
 Passo 15 - Verificar o campo Nome Completo com caracteres especiais
      Wait Until Page Contains            Informe o nome e sobrenome com as iniciais em letra maiúscula e sem caracteres especiais.
      Wait Until Page Contains Element    locator=//div[@class='MuiAlert-message css-1xsto0d'][contains(.,'Informe o nome e sobrenome com as iniciais em letra maiúscula e sem caracteres especiais.')]
-
+     Sleep    1s
 
 Passo 8 - Digitar nome completo em branco
      Wait Until Element Is Visible    locator=${novoCadastro} 
@@ -36,7 +36,7 @@ Passo 8 - Digitar nome completo em branco
 Passo 15 - Verificar o campo Nome Completo com nome em branco
      Wait Until Page Contains            O campo nome completo é obrigatório
      Wait Until Page Contains Element    locator=//p[@class='css-bbipig'][contains(.,'O campo nome completo é obrigatório')]
-
+     Sleep    1s
 Passo 8 - Digitar nome completo com mais de 100 caracteres
      Wait Until Element Is Visible    locator=${novoCadastro} 
      Input Text                       locator=${NomeCompletoInput}   text=Antonio Francisco Xavier Frederico Pereira Alves da Silva Santos Oliveira Rodrigues Martins Garcia Junior
@@ -45,7 +45,7 @@ Passo 8 - Digitar nome completo com mais de 100 caracteres
 Passo 15 - Verificar o campo Nome Completo com mais de 100 caracteres
      Wait Until Page Contains            O nome completo deve ter no máximo 100 caracteres.
      Wait Until Page Contains Element    locator=//div[@class='MuiAlert-message css-1xsto0d'][contains(.,'O nome completo deve ter no máximo 100 caracteres.')]
-
+     Sleep    1s
 Passo 8 - Digitar nome completo sem sobrenome
      Wait Until Element Is Visible    locator=${novoCadastro} 
      Input Text                       locator=${NomeCompletoInput}   text=Antonio
@@ -54,7 +54,7 @@ Passo 8 - Digitar nome completo sem sobrenome
 Passo 15 - Verificar o campo Nome Completo sem sobrenome
      Wait Until Page Contains            Informe o nome e sobrenome com as iniciais em letra maiúscula e sem caracteres especiais.
      Wait Until Page Contains Element    locator=//div[@class='MuiAlert-message css-1xsto0d'][contains(.,'Informe o nome e sobrenome com as iniciais em letra maiúscula e sem caracteres especiais.')]
-
+     Sleep    1s
 
 
 Passo 11 - Digitar CPF com tamanho menor
@@ -65,7 +65,7 @@ Passo 11 - Digitar CPF com tamanho menor
 Passo 15 - Verificar o campo CPF com tamanho menor
      Wait Until Page Contains            Deve preencher o CPF com 11 dígitos
      Wait Until Page Contains Element    locator=//div[@class='MuiAlert-message css-1xsto0d'][contains(.,'Deve preencher o CPF com 11 dígitos')]
-
+     Sleep    1s
 Passo 11 - Digitar CPF com tamanho maior
      Click Element                    locator=${CPFInput} 
      Input Text                       locator=${CPFInput}   text=123456789123
@@ -74,7 +74,7 @@ Passo 11 - Digitar CPF com tamanho maior
 Passo 15 - Verificar o campo CPF com tamanho maior
      Wait Until Page Contains            Deve preencher o CPF com 11 dígitos
      Wait Until Page Contains Element    locator=//div[@class='MuiAlert-message css-1xsto0d'][contains(.,'Deve preencher o CPF com 11 dígitos')]
-
+     Sleep    1s
 
 Passo 11 - Digitar CPF com letras
      Click Element                    locator=${CPFInput} 
@@ -84,7 +84,7 @@ Passo 11 - Digitar CPF com letras
 Passo 15 - Verificar o campo CPF com letras
      Wait Until Page Contains            Campo CPF deve conter apenas números
      Wait Until Page Contains Element    locator=//div[@class='MuiAlert-message css-1xsto0d'][contains(.,'Campo CPF deve conter apenas números')]
-
+     Sleep    1s
 
 Passo 10 - Digitar Perfil de Acesso errado
     
@@ -95,7 +95,7 @@ Passo 10 - Digitar Perfil de Acesso errado
 Passo 15 - Verificar o campo Pefil de Acesso errado
      Wait Until Page Contains            O campo perfil de acesso deve ser preenchido de acordo com o seu cargo exemplo: ADMIN.
      Wait Until Page Contains Element    locator=//div[@class='MuiAlert-message css-1xsto0d'][contains(.,'O campo perfil de acesso deve ser preenchido de acordo com o seu cargo exemplo: ADMIN.')]
-
+     Sleep    1s
 
 Passo 12 - Digitar Senha somente com numeros
     Click Element                    locator=${senhaInputNovoCadastro}
@@ -110,7 +110,7 @@ Passo 13 - Digitar Confirmar Senha somente com numeros
 Passo 15 - Verificar o campo senha com numeros
      Wait Until Page Contains            Senha precisa ter: uma letra maiúscula, uma letra minúscula, um número, um caractere especial(@#$%) e tamanho entre 8-12.
      Wait Until Page Contains Element    locator=//div[@class='MuiAlert-message css-1xsto0d'][contains(.,'Senha precisa ter: uma letra maiúscula, uma letra minúscula, um número, um caractere especial(@#$%) e tamanho entre 8-12.')]
-
+     Sleep    1s
 Passo 12 - Digitar Senha somente com letras
     Click Element                    locator=${senhaInputNovoCadastro}
     Input Text                       locator=${senhaInputNovoCadastro}  text=AAAabbddcc
@@ -124,7 +124,7 @@ Passo 13 - Digitar Confirmar Senha somente com letras
 Passo 15 - Verificar o campo senha com letras
      Wait Until Page Contains            Senha precisa ter: uma letra maiúscula, uma letra minúscula, um número, um caractere especial(@#$%) e tamanho entre 8-12.
      Wait Until Page Contains Element    locator=//div[@class='MuiAlert-message css-1xsto0d'][contains(.,'Senha precisa ter: uma letra maiúscula, uma letra minúscula, um número, um caractere especial(@#$%) e tamanho entre 8-12.')]
-
+     Sleep    1s
 Passo 12 - Digitar Senha somente com espaço
     Click Element                    locator=${senhaInputNovoCadastro}
     Input Text                       locator=${senhaInputNovoCadastro}  text=AAAa bbddcc&
@@ -138,4 +138,4 @@ Passo 13 - Digitar Confirmar Senha somente com espaço
 Passo 15 - Verificar o campo senha com espaço
      Wait Until Page Contains            Senha precisa ter: uma letra maiúscula, uma letra minúscula, um número, um caractere especial(@#$%) e tamanho entre 8-12.
      Wait Until Page Contains Element    locator=//div[@class='MuiAlert-message css-1xsto0d'][contains(.,'Senha precisa ter: uma letra maiúscula, uma letra minúscula, um número, um caractere especial(@#$%) e tamanho entre 8-12.')]
-
+     Sleep    1s

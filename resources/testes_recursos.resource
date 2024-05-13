@@ -31,7 +31,7 @@ ${salvarButton}                      //button[@type='submit'][contains(.,'SALVAR
 *** Keywords ***
 
 Abrir o navegador
-    Open Browser  browser=headlesschrome
+    Open Browser  browser=chrome
     Maximize Browser Window
 Fechar o navegador
     Close Browser
@@ -78,12 +78,12 @@ Passo 8 - Digitar Nome Completo
     Sleep    1s
 
 Passo 9 - Digitar email
-     ${palavra_randomica}    Generate Random String    length=10    chars=[LETTERS]
+     ${palavra_randomica}    Generate Random String    length=11    chars=[LETTERS]
      ${palavra_randomica}    Convert To Lower Case     ${palavra_randomica}
-     Set Test Variable       ${MAIL}             ${palavra_randomica}2@qacoders.com.br
+     Set Test Variable       ${MAIL}                   ${palavra_randomica}45@anderson.com
      Log                     ${MAIL}   
      Click Element                    locator=${emailCadastroInput}
-     Input Text                       locator=${emailCadastroInput}  text= ${MAIL}
+     Input Text                       locator=${emailCadastroInput}  text=${MAIL}
      Sleep    1s
 
 Passo 10 - Digitar Perfil de Acesso
