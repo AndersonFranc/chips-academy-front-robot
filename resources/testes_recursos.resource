@@ -31,7 +31,7 @@ ${salvarButton}                      //button[@type='submit'][contains(.,'SALVAR
 *** Keywords ***
 
 Abrir o navegador
-    Open Browser  browser=chrome
+    Open Browser  browser=headlesschrome
     Maximize Browser Window
 Fechar o navegador
     Close Browser
